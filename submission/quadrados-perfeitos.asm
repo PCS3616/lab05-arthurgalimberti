@@ -1,12 +1,10 @@
 	SC QUAD	;
 	HM =0	;
-
-SAVE	K /100	; var SAVE
 CTE2	K /2	; const 2
+CTE1	K =1	; const 1
+CTE63	K =63	; const 63
 I	K =0	; var I
 SUM	K =0	; var SUM
-CTE63	K =63	; const 63
-CTE1	K =1	; const 1
 
 @ /200
 QUAD	K =0	; Inicio da subrotina
@@ -20,7 +18,7 @@ LOOP	LD SAVE	; AC = SAVE
 	AD CTE1	; AC = SUM + 2 * I + 1
 	MM SUM	; SUM = SUM + 2 * I + 1
 	
-	MM SAVE	; SAVE = SUM + 2 * I + 1 
+SAVE	MM /100	; A cada iteracao, salva em lugares diferentes
 	
 	LD I	; AC = I
 	AD CTE1 ; AC = I + 1
@@ -32,4 +30,3 @@ LOOP	LD SAVE	; AC = SAVE
 	JP LOOP	; Loop enquanto I != 63
 
 FIM	RS QUAD	; Fim da subrotina
-
