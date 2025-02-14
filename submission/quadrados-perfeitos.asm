@@ -10,7 +10,7 @@ CTE1	K =1	; const 1
 
 @ /200
 QUAD	K =0	; Inicio da subrotina
-	LD SAVE	; AC = SAVE
+LOOP	LD SAVE	; AC = SAVE
 	AD CTE2	; AC = SAVE + 2
 	MM SAVE ; SAVE = SAVE + 2
 	
